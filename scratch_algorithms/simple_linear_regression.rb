@@ -44,7 +44,7 @@ end
 # load sample data
 features = [1,2,4,3,5]
 labels = [1,3,3,2,5]
-puts "Sample data"
+puts "SimpleLinearRegression testing"
 puts "Features: #{features}"
 puts "Labels: #{labels}"
 puts "-" * 50
@@ -53,8 +53,13 @@ puts "Training"
 model = SimpleLinearRegression.new()
 # train the model
 model.fit(features, labels)
-# predict label by the given feature
-pred_label = model.predict(10)
 puts "-" * 50
 puts "Prediction"
+puts "Predict the known data"
+# predict label by the given feature
+features.each_with_index do |n, index|
+  puts "x= #{n}, pred y: #{model.predict(n)}, actual y: #{labels[index]}"
+end
+puts "Predict the unknown data"
+pred_label = model.predict(10)
 puts "the predict of given feature 10 is: #{pred_label}"

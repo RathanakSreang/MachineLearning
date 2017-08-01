@@ -42,7 +42,7 @@ end
 # load sample data
 features = [1,2,4,3,5]
 labels = [1,3,3,2,5]
-puts "Sample data"
+puts "GradientDescentLinearRegression testing"
 puts "Features: #{features}"
 puts "Labels: #{labels}"
 puts "-" * 50
@@ -52,6 +52,11 @@ model = GradientDescentLinearRegression.new()
 # train the model
 model.fit(features, labels)
 # predict label by the given feature
+puts "Predict the known data"
+features.each_with_index do |n, index|
+  puts "x= #{n}, pred y: #{model.predict(n)}, actual y: #{labels[index]}"
+end
+puts "Predict the unknown data"
 pred_label = model.predict(10)
 puts "-" * 50
 puts "Prediction"

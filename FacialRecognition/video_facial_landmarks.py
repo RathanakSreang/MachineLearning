@@ -15,7 +15,7 @@ print("[INFO] loading facial landmark predictor...")
 detector = dlib.get_frontal_face_detector()
 
 print("[INFO] camera sensor warming up...")
-vs = VideoStream(usePiCamera=args["picamera"] > 0).start()
+vs = VideoStream().start()
 time.sleep(2.0)
 
 # loop over the frames from the video stream

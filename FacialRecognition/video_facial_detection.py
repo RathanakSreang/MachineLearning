@@ -20,14 +20,7 @@ detector = dlib.get_frontal_face_detector()
 print("[INFO] camera sensor warming up...")
 vs = VideoStream().start()
 time.sleep(2.0)
-count_image = 0
-save_folder = args["save"]
-base_dir = "images/"
 
-if save_folder:
-    base_dir = base_dir + save_folder + "/"
-    if not os.path.exists(save_folder):
-        os.makedirs("images/" + save_folder)
 # loop over the frames from the video stream
 while True:
     # grab the frame from the threaded video stream, resize it to
@@ -49,21 +42,6 @@ while True:
      # if the `q` key was pressed, break from the loop
     if key == ord("q"):
         break
-
-    # if the `s` key was pressed save the first found face
-    if key == ord('s'):
-        if len(rects) > 0:
-            (x,y,w,h) = face_utils.rect_to_bb(rects[0])
-            crop_img = gray_frame[y : y+h, x : x + w]
-            # NOTE: its img[y: y + h, x: x + w] and *not* img[x: x + w, y: y + h]
-            image_name = base_dir + str(count_image) + ".png"
-            # save image
-            cv2.imwrite(image_name, crop_img)
-            # show image
-            cv2.imshow(image_name, crop_img)
-            count_image += 1
-            if count_image > 10:
-                count_image = 0
 
     # show the frame
     cv2.imshow("Frame", frame)

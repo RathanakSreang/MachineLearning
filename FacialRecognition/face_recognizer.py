@@ -15,4 +15,12 @@
 # predict
 # save model
 
+# load model: https://keras.io/models/about-keras-models/
 # predict
+
+# refference
+# https://keras.io/getting-started/functional-api-guide/
+# https://machinelearningmastery.com/object-recognition-convolutional-neural-networks-keras-deep-learning-library/
+# https://aboveintelligent.com/face-recognition-with-keras-and-opencv-2baf2a83b799
+# https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html
+# https://github.com/fchollet/keras/tree/master/examples

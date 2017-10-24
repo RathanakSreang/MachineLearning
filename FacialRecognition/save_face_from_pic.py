@@ -28,8 +28,7 @@ if save_file_name:
     if not os.path.exists(base_dir):
         os.makedirs(base_dir)
 
-# for filename in glob.glob(args["path"] + '/*.jpg')
-valid_images = [".jpg",".gif",".png",".tga"]
+valid_images = [".jpg",".gif",".png"]
 path = args["path"]
 for f in os.listdir(path):
     ext = os.path.splitext(f)[1]

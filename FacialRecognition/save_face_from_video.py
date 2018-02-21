@@ -57,7 +57,7 @@ while True:
             # show image
             cv2.imshow(image_name, faceAligned)
             count_image += 1
-            if count_image > 10:
+            if count_image > 20:
                 count_image = 0
 
     # loopop over the face detections

@@ -42,9 +42,10 @@ for f in os.listdir(path):
     # detect faces in the grayayscale frame
     rects = detector(gray_frame, 0)
 
-    if len(rects) > 0:
-        faceAligned = fa.align(frame, gray_frame, rects[0])
-        image_name = base_dir + str(count_image) + ".png"
+    # if len(rects) > 0:
+    for idx, rect in enumerate(rects):
+        faceAligned = fa.align(frame, gray_frame, rect)
+        image_name = base_dir + str(count_image) + "_" + str(idx) + ".png"
         # save image
         cv2.imwrite(image_name, faceAligned)
         # show image
